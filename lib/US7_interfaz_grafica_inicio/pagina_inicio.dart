@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:roadrealm/US6_interfaz_grafica_eventos/pagina_eventos.dart';
 
 class Pagina_Inicial extends StatelessWidget {
   const Pagina_Inicial({Key? key});
@@ -143,7 +144,7 @@ class Pagina_Inicial extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const Pagina_Inicial(),
+            builder: (context) => const Pagina_Eventos(),
           ),
         );
       },
