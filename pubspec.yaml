@@ -16,4 +16,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
+  assets:
+    - assets/ImagenesFondo/FondoPaginaInicial.jpg
+    - assets/Logo/Road_Realm_Logo.png
+    
   uses-material-design: true
