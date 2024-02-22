@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_maps_flutter: ^2.5.3
+  google_maps_flutter_web: ^0.5.4+3
+   
 
 dev_dependencies:
   flutter_test:
@@ -19,5 +22,6 @@ flutter:
   assets:
   - assets/Logo/Road_Realm_Logo.png
   - assets/fondo.png
+  - assets/fondo_login.png
 
   uses-material-design: true

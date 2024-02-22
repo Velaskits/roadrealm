@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:roadrealm/US2_Login/login.dart';
+import 'package:roadrealm/US1_Registre/registre.dart';
 
-class Registrarse extends StatelessWidget {
-  const Registrarse({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class Registrarse extends StatelessWidget {
           child:
               _pasarPagina_Inicial(context, 'assets/Logo/Road_Realm_Logo.png'),
         ),
-        actions: [
+         actions: [
           TextButton(
             onPressed: () {
               Navigator.pop(context);
@@ -48,86 +48,66 @@ class Registrarse extends StatelessWidget {
           ),
         ],
         title: const Center(
-          child: Text(
-            "Road Realm",
-            style: TextStyle(
-              color: Color.fromARGB(171, 0, 0, 0),
-              fontSize: 38,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Text("Road Realm",
+          style: TextStyle(
+           color:Color.fromARGB(171, 0, 0, 0), 
+            fontSize: 38,
+            fontWeight: FontWeight.bold,
+          ),
           ),
         ),
-      ),
+        ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/fondo.png'),
+            image: AssetImage('assets/fondo_login.png'),
             fit: BoxFit.cover,
           ),
         ),
         child: Center(
           child: Container(
             width: 400,
-            height: 650,
+            height: 400,
             decoration: BoxDecoration(
               color: const Color.fromARGB(171, 71, 71, 71),
               borderRadius: BorderRadius.circular(10.0),
-              border: Border.all(
+               border: Border.all(
                 color: const Color.fromARGB(255, 255, 255, 255),
               ),
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
+              
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    "Registrarte",
-                    style: TextStyle(
-                      color: Color.fromARGB(171, 255, 255, 255),
+                const Text(
+                  "Inicar Sesion",
+                  style: TextStyle(
+                    color:Color.fromARGB(171, 255, 255, 255), 
                       fontSize: 38,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
-                const SizedBox(height: 50),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Nombre'),
-                ),
-                const SizedBox(height: 16),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Apellido'),
-                ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 26),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Nombre Usuario'),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 26),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Contraseña'),
                 ),
-                const SizedBox(height: 16),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Correo'),
-                ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 26),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Registrarse(),
-                        ));
+                      Navigator.pop(context);
+                      Navigator.push(
+                      context,
+                       MaterialPageRoute(builder: (context) => Login(),));
                   },
                   child: const Text(
-                    'Registrarse',
+                    'Iniciar',
                     style: TextStyle(
                       color: Color.fromARGB(255, 83, 83, 83),
                       fontSize: 18,
@@ -149,7 +129,7 @@ class Registrarse extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const Registrarse(),
+            builder: (context) => const Login(),
           ),
         );
       },
@@ -167,6 +147,9 @@ class Registrarse extends StatelessWidget {
         labelText: labelText,
         filled: true,
         fillColor: Colors.white,
+        labelStyle: const TextStyle(
+          color: Color.fromARGB(255, 8, 8, 8),
+        ),
       ),
     );
   }
