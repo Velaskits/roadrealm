@@ -81,7 +81,7 @@ class Login extends StatelessWidget {
               
               children: [
                 const Text(
-                  "Inicar Sesion",
+                  "Iniciar Sesion",
                   style: TextStyle(
                     color:Color.fromARGB(171, 255, 255, 255), 
                       fontSize: 38,
