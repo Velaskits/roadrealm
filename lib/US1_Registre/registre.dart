@@ -104,11 +104,6 @@ class Registrarse extends StatelessWidget {
                 const SizedBox(height: 16),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Nombre Usuario'),
-                ),
-                const SizedBox(height: 16),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Contraseña'),
                 ),
                 const SizedBox(height: 16),

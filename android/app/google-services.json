@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "506106622023",
+    "project_id": "roadrealm",
+    "storage_bucket": "roadrealm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506106622023:android:bdc9688dce0a3f0ee4c162",
+        "android_client_info": {
+          "package_name": "com.example.roadrealm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvBn-wVg7M_JE1bdid1kf5O7mSkF3ymf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

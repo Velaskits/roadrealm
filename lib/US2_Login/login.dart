@@ -91,7 +91,7 @@ class Login extends StatelessWidget {
                 const SizedBox(height: 26),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Nombre Usuario'),
+                  child: _ColorTextos('Correo'),
                 ),
                 const SizedBox(height: 26),
                 Padding(
