@@ -4,7 +4,7 @@ import 'package:roadrealm/US6_interfaz_grafica_eventos/pagina_eventos.dart';
 
 class Pagina_Inicial extends StatelessWidget {
   const Pagina_Inicial({Key? key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
