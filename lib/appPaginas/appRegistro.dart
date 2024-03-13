@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:roadrealm/appPaginas/pagina_app.dart';
 
-class AppSessio extends StatelessWidget {
-  const AppSessio({super.key});
+class AppRegistro extends StatelessWidget {
+  const AppRegistro({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        
       ),
       body: Container(
          child: Center(
@@ -46,6 +47,14 @@ class AppSessio extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Contraseña'),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _ColorTextos('Nombre'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _ColorTextos('Apellido'),
+                ),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {
@@ -57,7 +66,7 @@ class AppSessio extends StatelessWidget {
                         ));
                   },
                   child: const Text(
-                    'Iniciar',
+                    'Registrarte',
                     style: TextStyle(
                       color: Color.fromARGB(255, 83, 83, 83),
                       fontSize: 18,
@@ -81,5 +90,5 @@ class AppSessio extends StatelessWidget {
         fillColor: Colors.white,
       ),
     );
-}
+  }
 }
