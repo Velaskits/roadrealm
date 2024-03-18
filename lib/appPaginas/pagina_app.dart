@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roadrealm/appPaginas/appRegistro.dart';
 import 'package:roadrealm/appPaginas/appSessio.dart';
 
 class App extends StatelessWidget {
@@ -29,21 +30,25 @@ class App extends StatelessWidget {
               );
               },
               style: ElevatedButton.styleFrom(
-                primary: const Color.fromARGB(96, 59, 59, 59), 
-                onPrimary: Colors.white,
+                foregroundColor: Color.fromARGB(255, 253, 253, 253),
                 textStyle: TextStyle(fontSize: 18), 
+                backgroundColor: Color.fromARGB(255, 63, 63, 63),
               ),
               child: Text('Iniciar Session'),
             ),
             SizedBox(height: 20), 
             ElevatedButton(
               onPressed: () {
-                
+                Navigator.pop(context);
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AppRegistro()),
+                );
               },
               style: ElevatedButton.styleFrom(
-                primary: const Color.fromARGB(96, 59, 59, 59), 
-                onPrimary: Colors.white,
+                foregroundColor: Color.fromARGB(255, 253, 253, 253),
                 textStyle: TextStyle(fontSize: 18), 
+                backgroundColor: Color.fromARGB(255, 63, 63, 63),
               ),
               child: Text('Registrarte'),
             ),
@@ -54,5 +59,7 @@ class App extends StatelessWidget {
       
       ),
     );
+    
   }
+  
 }

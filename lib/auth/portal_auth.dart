@@ -15,7 +15,7 @@ class PortalAuth extends StatelessWidget {
             if(snapshot.hasData){
               return const Login();
             }else{
-              return const Registrarse();
+              return  Registrarse();
             }
         },
       ),

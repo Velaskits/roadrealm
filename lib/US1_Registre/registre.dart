@@ -1,9 +1,33 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:roadrealm/US2_Login/login.dart';
+import 'package:roadrealm/auth/servei_auth.dart';
 
 class Registrarse extends StatelessWidget {
-  const Registrarse({super.key});
+   Registrarse({super.key});
+  final TextEditingController controllerEmail = TextEditingController();
+  final TextEditingController controllerPassword = TextEditingController();
 
+
+
+void ferRegistre(BuildContext context) async{
+   final serveiAuth = ServeiAuth();
+    try{
+      serveiAuth.registrocreado(
+        controllerEmail.text, 
+        controllerPassword.text,
+        );
+    }catch(e){
+      showDialog(
+        context: context,
+       builder: (context) =>  AlertDialog(
+        title: const Text("Error"),
+        content: Text(e.toString()),
+       ),
+       );
+    }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +43,7 @@ class Registrarse extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Login()),
+                MaterialPageRoute(builder: (context) =>  Login()),
               );
             },
             child: const Text(
@@ -35,7 +59,7 @@ class Registrarse extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Registrarse()),
+                MaterialPageRoute(builder: (context) =>  Registrarse()),
               );
             },
             child: const Text(
@@ -103,12 +127,14 @@ class Registrarse extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Padding(
+                  //controllerPassword
                   padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Contraseña'),
                 ),
                 const SizedBox(height: 16),
                
                 Padding(
+                 // controller: controllerEmail, 
                   padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Correo'),
                 ),
@@ -119,7 +145,7 @@ class Registrarse extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Registrarse(),
+                          builder: (context) =>  Registrarse(),
                         ));
                   },
                   child: const Text(
@@ -145,7 +171,7 @@ class Registrarse extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const Registrarse(),
+            builder: (context) =>  Registrarse(),
           ),
         );
       },

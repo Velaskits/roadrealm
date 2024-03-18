@@ -28,7 +28,7 @@ class AppRegistro extends StatelessWidget {
               const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    "Iniciar Session",
+                    "Registrarte",
                     style: TextStyle(
                       color: Color.fromARGB(255, 252, 252, 252),
                       fontSize: 38,
@@ -47,10 +47,12 @@ class AppRegistro extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Contraseña'),
                 ),
+                const SizedBox(height: 16),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Nombre'),
                 ),
+                const SizedBox(height: 16),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: _ColorTextos('Apellido'),
@@ -75,12 +77,11 @@ class AppRegistro extends StatelessWidget {
                   ),
                 ),
           ],
-        
         ),
       ),
     ),
-      ),
-    );
+  ),
+ );
   }
   Widget _ColorTextos(String labelText) {
     return TextField(

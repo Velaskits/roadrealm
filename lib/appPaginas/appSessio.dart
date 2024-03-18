@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roadrealm/appPaginas/appDentro.dart';
 import 'package:roadrealm/appPaginas/pagina_app.dart';
 
 class AppSessio extends StatelessWidget {
@@ -53,7 +54,7 @@ class AppSessio extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const App(),
+                          builder: (context) =>  AppDentro(),
                         ));
                   },
                   child: const Text(
