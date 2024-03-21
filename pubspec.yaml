@@ -10,6 +10,10 @@ dependencies:
   carousel_slider: ^4.2.1
   flutter:
     sdk: flutter
+  google_maps_flutter: ^2.5.3
+  geolocator: ^7.7.0
+  google_maps_webservice: ^0.0.20-nullsafety.5
+
 
 dev_dependencies:
   flutter_test:
@@ -27,5 +31,8 @@ flutter:
     - assets/Eventos/Evento3.jpg
     - assets/flechaDerecha.png
     - assets/flechaIzquierda.png
+    - assets/Rutas/Ruta1.png
+    - assets/Rutas/Ruta2.png
+    - assets\ModificarCuentarImag\avatarDefault.jpg
 
   uses-material-design: true

@@ -1,10 +1,13 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:roadrealm/US10_Creacion%20de%20los%20mapas/mapas.dart';
 import 'package:roadrealm/US6_interfaz_grafica_eventos/pagina_eventos.dart';
 
+// ignore: camel_case_types
 class Pagina_Inicial extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const Pagina_Inicial({Key? key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +17,8 @@ class Pagina_Inicial extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/ImagenesFondo/FondoPaginaInicial.jpg'),
+                image:
+                    AssetImage('assets/ImagenesFondo/FondoPaginaInicial.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -23,7 +27,7 @@ class Pagina_Inicial extends StatelessWidget {
           // Filtro de desenfoque \\
           Container(
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 86, 86, 86).withOpacity(0.5),
+              color: const Color.fromARGB(255, 86, 86, 86).withOpacity(0.5),
             ),
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
@@ -60,11 +64,18 @@ class Pagina_Inicial extends StatelessWidget {
                       );
                     },
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(const Size(500, 100)),
+                      backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 220, 220, 220)),
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(500, 100)),
                     ),
                     child: const Text(
                       'Registrate',
-                      style: TextStyle(fontSize: 50, color: Colors.black),
+                      style: TextStyle(fontSize: 50, color: Color.fromARGB(255, 58, 58, 58)),
                     ),
                   ),
                 ],
@@ -78,16 +89,23 @@ class Pagina_Inicial extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Pagina_Inicial(),
+                          builder: (context) => const MapaPage(),
                         ),
                       );
                     },
                     style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(const Size(500, 100)),
+                      backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 202, 202, 202)),
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0),
+                        ),
+                      ),
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(500, 100)),
                     ),
                     child: const Text(
                       'Iniciar Sesion',
-                      style: TextStyle(fontSize: 50, color: Colors.black),
+                      style: TextStyle(fontSize: 50, color: Color.fromARGB(255, 58, 58, 58)),
                     ),
                   ),
                 ],
@@ -99,14 +117,16 @@ class Pagina_Inicial extends StatelessWidget {
                 children: [
                   Container(
                     color: Colors.white,
-                    padding: const EdgeInsets.all(8), 
+                    padding: const EdgeInsets.all(8),
                     child: TextButton(
                       onPressed: () {
                         (context) => const Pagina_Inicial();
                       },
                       child: const Text(
                         'Política de privacidad',
-                        style: TextStyle(fontSize: 24, color: Color.fromARGB(255, 0, 81, 255)),
+                        style: TextStyle(
+                            fontSize: 24,
+                            color: Color.fromARGB(255, 0, 81, 255)),
                       ),
                     ),
                   ),
@@ -117,14 +137,16 @@ class Pagina_Inicial extends StatelessWidget {
                 children: [
                   Container(
                     color: Colors.white,
-                    padding: const EdgeInsets.all(8), 
+                    padding: const EdgeInsets.all(8),
                     child: TextButton(
                       onPressed: () {
                         (context) => const Pagina_Inicial();
                       },
                       child: const Text(
                         'Contacto',
-                        style: TextStyle(fontSize: 24, color: Color.fromARGB(255, 0, 81, 255)),
+                        style: TextStyle(
+                            fontSize: 24,
+                            color: Color.fromARGB(255, 0, 81, 255)),
                       ),
                     ),
                   ),
@@ -144,7 +166,7 @@ class Pagina_Inicial extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const Pagina_Eventos(),
+            builder: (context) => Pagina_Eventos(),
           ),
         );
       },
