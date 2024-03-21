@@ -8,66 +8,86 @@ class AppDentro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Iniciar Sesión",
-          style: TextStyle(
-            color: Color.fromARGB(255, 252, 252, 252),
-            fontSize: 38,
-            fontWeight: FontWeight.bold,
-          ),
+        
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 112, 112, 112),
+              ),
+              child: Text(
+                'Menú',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text(
+                'Perfil',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NextPage(),
+                  ),
+                );
+              },
+            ),
+             ListTile(
+              title: const Text(
+                'Pagina Web',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NextPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'Reportar Incidencia',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+             
+              onTap: () {
+                
+                Navigator.pop(context); 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AnotherPage(),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                isScrollControlled: true,
-                builder: (BuildContext context) {
-                  return Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            0.5, // Ancho del popup
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => NextPage(),
-                                  ),
-                                );
-                              },
-                              child: const Text('Opción 1'),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => AnotherPage(),
-                                  ),
-                                );
-                              },
-                              child: const Text('Opción 2'),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-          ),
-        ],
       ),
       body: Center(
         child: Container(
@@ -80,11 +100,11 @@ class AppDentro extends StatelessWidget {
               color: const Color.fromARGB(255, 255, 255, 255),
             ),
           ),
-          child: Column(
+          child: const Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const SizedBox(height: 8),
-              const Text(
+              SizedBox(height: 8),
+              Text(
                 "Road Realm",
                 style: TextStyle(
                   color: Color.fromARGB(255, 252, 252, 252),
@@ -92,8 +112,7 @@ class AppDentro extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 16),
-              // Aquí puedes agregar otros widgets según tu diseño
+              SizedBox(height: 16),
             ],
           ),
         ),

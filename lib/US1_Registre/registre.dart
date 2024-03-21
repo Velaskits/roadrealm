@@ -5,18 +5,31 @@ import 'package:roadrealm/US2_Login/login.dart';
 import 'package:roadrealm/auth/servei_auth.dart';
 
 class Registrarse extends StatelessWidget {
-   Registrarse({super.key});
+  final bool obscureText;
+   Registrarse({
+    super.key,
+   this.obscureText = false,
+   });
+
   final TextEditingController controllerEmail = TextEditingController();
   final TextEditingController controllerPassword = TextEditingController();
+  final TextEditingController controllerNombre = TextEditingController();
+  final TextEditingController controllerApellido = TextEditingController();
+  
+  
 
 
 
 void ferRegistre(BuildContext context) async{
    final serveiAuth = ServeiAuth();
+    
     try{
       serveiAuth.registrocreado(
         controllerEmail.text, 
         controllerPassword.text,
+        controllerNombre.text,
+        controllerApellido.text,
+        
         );
     }catch(e){
       showDialog(
@@ -118,36 +131,36 @@ void ferRegistre(BuildContext context) async{
                 const SizedBox(height: 50),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Nombre'),
+                  child: _ColorTextos('Nombre',controllerNombre,false),
                 ),
                 const SizedBox(height: 16),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Apellido'),
+                  child: _ColorTextos('Apellido',controllerApellido,false),
                 ),
                 const SizedBox(height: 16),
                 Padding(
-                  //controllerPassword
                   padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Contraseña'),
+                  child: _ColorTextos('Contraseña',controllerPassword,true),
+                  
+                 
                 ),
                 const SizedBox(height: 16),
                
                 Padding(
-                 // controller: controllerEmail, 
                   padding: const EdgeInsets.all(8.0),
-                  child: _ColorTextos('Correo'),
+                  child: _ColorTextos('Correo',controllerEmail,false),
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () => ferRegistre(context)/*() {
                     Navigator.pop(context);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) =>  Registrarse(),
                         ));
-                  },
+                  }*/,
                   child: const Text(
                     'Registrarse',
                     style: TextStyle(
@@ -183,8 +196,9 @@ void ferRegistre(BuildContext context) async{
     );
   }
 
-  Widget _ColorTextos(String labelText) {
+  Widget _ColorTextos(String labelText, TextEditingController controller, obscureText) {
     return TextField(
+       obscureText: obscureText,
       decoration: InputDecoration(
         labelText: labelText,
         filled: true,

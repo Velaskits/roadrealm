@@ -27,7 +27,7 @@ class ServeiAuth{
   }
 
   //Registre
-    Future<UserCredential> registrocreado(String Correo,Contrasena) async{
+    Future<UserCredential> registrocreado(String Correo,Contrasena,Nombre,Apellido) async{
       try{
         UserCredential credentialUser = await _auth.createUserWithEmailAndPassword(
           email: Correo,
@@ -37,6 +37,9 @@ class ServeiAuth{
         {
           "uid": credentialUser.user!.uid,
           "email" : Correo,
+          "nombre" : Nombre,
+          "apellido": Apellido,
+
         }
       );
 
